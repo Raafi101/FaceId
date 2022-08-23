@@ -1,7 +1,6 @@
 altair
 pandas
-streamlit
-Streamlit>= 1.9.2
+streamlit==1.9.2
 tensorflow
 matplotlib.pyplot
 matplotlib.image
