@@ -4,6 +4,54 @@ import math
 import pandas as pd
 import streamlit as st
 
+# Machine Learning
+import tensorflow as tf
+
+# Common Imports
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+import numpy as np
+import cv2
+from PIL import Image, ImageDraw, ImageTk, ImageGrab, EpsImagePlugin
+import os
+
+# Load data
+from google.colab import drive
+drive.mount('/content/drive')
+
+# Image Capture
+from IPython.display import display, Javascript
+from google.colab.output import eval_js
+from base64 import b64decode
+from IPython.display import Image
+
+#============================================================================
+
+def contrastive_loss2(y_true, y_pred):
+  square_pred = tf.math.square(y_pred)
+  margin_square = tf.math.maximum(1 - (y_pred), 0)
+  
+  return(tf.math.reduce_mean(
+      (1 - y_true) * square_pred + (y_true) * margin_square
+  ))
+
+model = tf.keras.models.load_model('lessFP/SiameseNetwork', custom_objects={'contrastive_loss2': contrastive_loss2})
+
+dim = 128
+
+img1 = cv2.imread('Data/tests/raafi.jpg')
+img1 = cv2.cvtColor(img1, cv2.COLOR_BGR2RGB)
+
+img2 = cv2.imread('Data/tests/kevin.jpg')
+img2 = cv2.cvtColor(img2, cv2.COLOR_BGR2RGB)
+
+img1 = cv2.resize(img1, (dim, dim), interpolation = cv2.INTER_AREA)/255
+img2 = cv2.resize(img2, (dim, dim), interpolation = cv2.INTER_AREA)/255
+
+pred = model.predict([np.expand_dims(img1, axis=0), np.expand_dims(img2, axis=0)])
+
+#===========================================================================
+
 a = 55
 b = 34
 
@@ -15,7 +63,9 @@ f"""
 # Face Identification with Siamese Neural Networks!
 ## Made by Raafi Rahman
 answer = {z}
+prediction = {pred}
 """
+
 
 with st.echo(code_location='below'):
     total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
