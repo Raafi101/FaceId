@@ -2,3 +2,12 @@ altair
 pandas
 streamlit
 tensorflow
+matplotlib.pyplot
+matplotlib.image
+numpy
+cv2
+PIL
+os
+IPython.display
+google.colab.output
+base64

@@ -16,10 +16,9 @@ from PIL import Image, ImageDraw, ImageTk, ImageGrab, EpsImagePlugin
 import os
 
 # Image Capture
-from IPython.display import display, Javascript
+from IPython.display import display, Javascript, Image
 from google.colab.output import eval_js
 from base64 import b64decode
-from IPython.display import Image
 
 #============================================================================
 
