@@ -12,13 +12,6 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import numpy as np
 import cv2
-from PIL import Image, ImageDraw, ImageTk, ImageGrab, EpsImagePlugin
-import os
-
-# Image Capture
-from IPython.display import display, Javascript, Image
-from google.colab.output import eval_js
-from base64 import b64decode
 
 #============================================================================
 
