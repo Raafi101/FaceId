@@ -15,10 +15,6 @@ import cv2
 from PIL import Image, ImageDraw, ImageTk, ImageGrab, EpsImagePlugin
 import os
 
-# Load data
-from google.colab import drive
-drive.mount('/content/drive')
-
 # Image Capture
 from IPython.display import display, Javascript
 from google.colab.output import eval_js
