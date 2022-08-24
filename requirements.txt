@@ -1,6 +1,6 @@
 altair
 pandas
 streamlit
-tensorflow
 numpy
 opencv-python-headless
+tensorflow
