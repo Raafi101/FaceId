@@ -10,8 +10,6 @@ import streamlit as st
 import tensorflow as tf
 
 # Common Imports
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
 import numpy as np
 import cv2
 
