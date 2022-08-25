@@ -23,7 +23,7 @@ def contrastive_loss2(y_true, y_pred):
       (1 - y_true) * square_pred + (y_true) * margin_square
   ))
 
-model = tf.keras.models.load_model('lessFP/SiameseNetwork', custom_objects={'contrastive_loss2': contrastive_loss2})
+model = tf.keras.models.load_model('lessFP.h5', custom_objects={'contrastive_loss2': contrastive_loss2})
 
 dim = 128
 
