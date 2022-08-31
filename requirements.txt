@@ -1,6 +1,0 @@
-altair
-pandas
-streamlit
-numpy
-opencv-python-headless
-tensorflow

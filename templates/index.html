@@ -1,0 +1,27 @@
+<head>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<page>
+
+    <h1 id="title">FaceID</h1>
+    <p style="font-weight: bold;">By Raafi Rahman</p>
+
+    <p>Select both of your images below.</p>
+
+    <form action="/" method="post" enctype="multipart/form-data">
+        <label>Choose image 1</label>
+        <input accept=".png, .jpg, .jpeg" type="file" id="img1" name="img1">
+        <label>Choose image 2</label>
+        <input accept=".png, .jpg, .jpeg" type="file" id="img2" name="img2">
+        <input type="submit">
+    </form>
+
+    <p>Prediction: {{ prediction }}</p>
+
+    <h1 id="about">About</h1>
+    <p>This program uses a Siamese Neural Network to predict whether the people in two images are the same person or different people.
+        The model will output "Match" if it predicts they are the same person and "No Match" if it predicts they are different people.
+    </p>
+
+</page>
